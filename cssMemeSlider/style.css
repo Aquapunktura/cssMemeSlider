@@ -1,0 +1,49 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	background-color: #232a46;
+}
+
+.wrapper {
+	max-width: 1024px;
+
+	margin: 0 auto;
+	border: 1px solid antiquewhite;
+	padding: 10px;
+	margin-top: 100px;
+
+	position: relative;
+}
+
+input {
+	position: absolute;
+	right: 40px;
+	bottom: 0;
+}
+
+.slider__buttons > div:nth-child(4) input {
+	right: 10px;
+}
+
+.slider__buttons > div:nth-child(3) input {
+	right: 20px;
+}
+
+.slider__buttons > div:nth-child(2) input {
+	right: 30px;
+}
+
+input:checked + div {
+	background-color: rgb(80, 87, 70);
+	color: antiquewhite;
+
+	display: block;
+}
+
+.slider__container {
+	display: none;
+}
