@@ -10,11 +10,12 @@ html {
 
 .wrapper {
 	width: 100vw;
-	height: 50%;
+	height: 450px;
 
 	margin: 0 auto;
 
 	position: relative;
+	overflow: hidden;
 }
 
 input {
@@ -24,10 +25,53 @@ input {
 .slider__container {
 	padding: 10px 20px;
 }
+.slider__image img {
+	transform: scale(0);
+	transition: all 0.3s ease-in-out;
+	position: relative;
+	z-index: 1;
+}
 
+input:checked + .slider__container .slider__image img {
+	transform: scale(1);
+}
+
+.slider__title {
+	transform: translateX(60%);
+	opacity: 0;
+	transition: all 0.4s ease-in-out;
+}
+input:checked + .slider__container .slider__title {
+	transform: translateX(0);
+	opacity: 1;
+}
+
+@media screen and (max-width: 600px) {
+	.slider__title {
+		margin-top: 70px;
+		text-align: center;
+	}
+
+	.slider__buttons > div:nth-child(4) label {
+		right: calc(50% - 76px) !important;
+	}
+	.slider__buttons > div:nth-child(3) label {
+		right: calc(50% - 34px) !important;
+	}
+	.slider__buttons > div:nth-child(2) label {
+		right: calc(50% + 8px) !important;
+	}
+	.slider__buttons > div:nth-child(1) label {
+		right: calc(50% + 50px) !important;
+	}
+}
 .slider__image {
 	margin-bottom: 20px;
 	height: 300px;
+	background-color: #3e4448;
+	border-radius: 18px;
+	overflow: hidden;
+	background: linear-gradient(135deg, #3e4448, #1c7538, #3e4448);
 }
 
 img {
@@ -40,13 +84,13 @@ img {
 	right: 10px;
 }
 .slider__buttons > div:nth-child(3) label {
-	right: 40px;
+	right: 52px;
 }
 .slider__buttons > div:nth-child(2) label {
-	right: 70px;
+	right: 94px;
 }
 .slider__buttons > div:nth-child(1) label {
-	right: 100px;
+	right: 136px;
 }
 
 input:checked + div {
@@ -72,8 +116,8 @@ span {
 label {
 	position: absolute;
 	right: 0px;
-	bottom: 12px;
-
+	top: 321px;
+	z-index: 1;
 	padding: 10px;
 
 	cursor: pointer;
@@ -83,17 +127,17 @@ label > div {
 	width: 20px;
 	height: 20px;
 	border-radius: 50%;
-	background-color: #71abfe;
-	border: 2px solid #71abfe;
+	background-color: #1c7538;
+	border: 2px solid #1c7538;
 	transition: all 0.3s linear;
 }
 
 input:checked + div + label > * {
-	border: 2px solid #71abfe;
+	border: 2px solid #1c7538;
 	background-color: #ffffff00;
 }
 
-input:checked + div + label > *:hover {
+input:checked + div + label:hover > * {
 	border-color: white;
 }
 
@@ -104,5 +148,5 @@ label:hover * {
 
 label *:active {
 	border: 2px solid white;
-	background-color: #71abfe;
+	background-color: #1c7538;
 }
